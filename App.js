@@ -18,12 +18,28 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+  constructor(props){
+    super(props) 
+    this.state={times:0}
+  }
+  timesPlus(){
+    let times=this.state.times;
+    times++;
+    this.setState({
+      times
+    })
+  }
+  componentDidMount(){
+    console.log("渲染前触发")
+  }
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+        <Text style={styles.welcome}>我的APP</Text>
+        <Text 
+        style={styles.instructions}
+        onPress={this.timesPlus.bind(this)}
+        >你点了我{this.state.times}次</Text>
       </View>
     );
   }
@@ -35,11 +51,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
   },
   instructions: {
     textAlign: 'center',
