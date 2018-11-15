@@ -17,16 +17,16 @@ type Props = {};
 export default class App extends Component<Props> {
   constructor(props) {
     super(props)
-    this.state={
-      selectedTab:"home"
+    this.state = {
+      selectedTab: "home"
     }
   }
   render() {
     return (
       <View style={styles.container}>
         <TabBarIOS
-        unselectedTintColor="#b0b0b0"
-        tintColor="black"
+          unselectedTintColor="#b0b0b0"
+          tintColor="black"
         >
           <Icon.TabBarItem
             title="树洞"
@@ -36,14 +36,14 @@ export default class App extends Component<Props> {
             renderAsOriginal={true}
             iconColor="#b0b0b0"
             selectedIconColor="black"
-            selected={this.state.selectedTab==="home"}
-            onPress={()=>{
+            selected={this.state.selectedTab === "home"}
+            onPress={() => {
               this.setState({
-                selectedTab:"home"
+                selectedTab: "home"
               })
             }}
           >
-          <Home/>
+            <Home />
           </Icon.TabBarItem>
           <Icon.TabBarItem
             title="编辑"
@@ -53,14 +53,14 @@ export default class App extends Component<Props> {
             iconColor="#b0b0b0"
             selectedIconColor="black"
             iconSize={40}
-            selected={this.state.selectedTab==="edit"}
-            onPress={()=>{
+            selected={this.state.selectedTab === "edit"}
+            onPress={() => {
               this.setState({
-                selectedTab:"edit"
+                selectedTab: "edit"
               })
             }}
           >
-          <Edit/>
+            <Edit />
           </Icon.TabBarItem>
           <Icon.TabBarItem
             title="个人中心"
@@ -70,14 +70,14 @@ export default class App extends Component<Props> {
             iconColor="#b0b0b0"
             selectedIconColor="black"
             iconSize={40}
-            selected={this.state.selectedTab==="person"}
-            onPress={()=>{
+            selected={this.state.selectedTab === "person"}
+            onPress={() => {
               this.setState({
-                selectedTab:"person"
+                selectedTab: "person"
               })
             }}
           >
-          <Person/>
+            <Person />
           </Icon.TabBarItem>
         </TabBarIOS>
       </View>
